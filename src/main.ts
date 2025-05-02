@@ -34,6 +34,6 @@ async function bootstrap() {
   app.useLogger(app.get(Logger));
 
   app.use(cookieParser());
-  await app.listen(app.get(ConfigService).getOrThrow('BACKEND_PORT'));
+  await app.listen(app.get(ConfigService).getOrThrow('PORT') || 3000);
 }
 bootstrap();
